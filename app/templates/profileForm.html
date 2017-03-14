@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block js %}
+{% endblock %}
+
+
+{% block main %}
+   <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  <form action="" method="post" name="email">
+      <h1>Profile Form</h1>
+      <h2>Fill in this form to add profile.</h2>
+
+      <p>upload profile image</p>
+      {{form.image}}
+
+      <p>Please enter your first name</p>
+      {{form.firstname}}
+
+      <p>Please enter lastname</p>
+      {{form.lastname}}
+
+      <p>Please enter your age</p>
+      {{form.age}}
+
+      <p>Please enter username</p>
+      {{form.username}}
+
+      <p>Please choose sex</p>
+      {{form.sex}}
+      {{form.hidden_tag()}} 
+      <p><input type="submit" value="Send"></p>
+
+  </form>
+{% endblock %}
